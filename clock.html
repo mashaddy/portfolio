@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 200px;
+            width: 200px;
+            border: 1px solid;
+            margin: 300px auto;
+            border-radius: 50%;
+            background: yellow;
+            position: relative;
+        }
+        #one{
+            position: absolute;
+            top: 20px;
+            left: 140px;
+        }#two{
+            position: absolute;
+            top: 50px;
+            left: 170px;
+        }#three{
+            position: absolute;
+            top: 95px;
+            left: 180px;
+        }#four{
+            position: absolute;
+            top: 135px;
+            left: 170px;
+        }
+        #five{
+            position: absolute;
+            top: 170px;
+            left: 140px;
+        }#six{
+            position: absolute;
+            /* top: 180px; */
+            left: 97px;
+            bottom: 1px;
+        }#seven{
+            position: absolute;
+            top: 170px;
+            left: 55px;
+        }#eight{
+            position: absolute;
+            top: 140px;
+            left: 22px;
+        }#nine{
+            position: absolute;
+            top: 95px;
+            left: 10px;
+        }#ten{
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }#eleven{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }#twele{
+            position: absolute;
+            top: 5px;
+            left: 95px;
+        }
+        .minNeddle{
+            border: 1px solid;
+            position:absolute;
+            top: 102px;
+            left: 50px;
+            width: 100px;
+            
+        }
+        .maxNeddle{
+            border: 1px solid;
+            position: relative;
+            top: 100px;
+            min-width: 100px;
+            /* transform: rotate(60deg); */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="one">1</span>
+        <span id="two">2</span>
+        <span id="three">3</span>
+        <span id="four">4</span>
+        <span id="five">5</span>
+        <span id="six">6</span>
+        <span id="seven">7</span>
+        <span id="eight">8</span>
+        <span id="nine">9</span>
+        <span id="ten">10</span>
+        <span id="eleven">11</span>
+        <span id="twele">12</span>
+        <div class="minNeddle"></div>
+        <div class="maxNeddle"></div>
+    </div>
+    <script>
+        var max = 0;
+        var maxfunction = () => {
+        max += 1;
+        document.querySelector(".maxNeddle").style.transform = `rotate(${max}deg)`;
+        if(max == 360){
+            max = 0;
+        }
+        }
+        
+        setInterval(() =>{
+            maxfunction();
+        },100)
+
+        var min = 0;
+        var minfunction = () => {
+            min +=5;
+            document.querySelector(".minNeddle").style.transform = `rotate(${min}deg)`;
+            if(min == 360){
+                min=0;
+            }
+        }
+        setInterval(() => {
+            minfunction();
+        }, 10);
+    </script>
+</body>
+</html>
